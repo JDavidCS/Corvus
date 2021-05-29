@@ -1,12 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+
+body{
+    background-color: #fafafa;
+}
 
 .header{
     position: absolute;
     width: 100%;
-    height: 64px;
+    background-color: #000a;
+    height: 60px;
+    z-index: 1000;
     top: 0;
-/*     background-color: #55Fe;
- */}
+}
+
+.header::after{
+    content: "";
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    width: 100%;
+    height: 30px; 
+    background: linear-gradient(to bottom, #fffa , transparent)
+}
 
 
     /* ------------------seccion de la izquierda (logo y nombre)---------------------------- */
@@ -19,13 +35,11 @@
     }
     
     .header__title h1{
-        margin: 0;
+        font-family: 'Roboto';
+        margin: 0 10px;
+        color: #fff;
     }
 
-    .header__top img{
-        margin: 0 5px;
-        width: 50px;
-    }
 
     /* ----------------------------seccion de la derecha (nav) ------------------------------ */
 
@@ -55,21 +69,14 @@
     }
 
     .sign-in{
-        border: 2px solid #435;
+        border: 2px solid #4b00aa;
         padding: 10px;
-        color: black;
+        color: #fff;
     }
 
     .log-in{
         padding: 12px 30px;
         color: #fff;
-        background-color: #415;
+        background-color: #4b00aa;
     }
 
-
-
-
-
-main{
-    margin-top: 64px;
-}
