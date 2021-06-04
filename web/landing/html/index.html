@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/web/landing/style/normalize.css">
     <link rel="stylesheet" href="../style/section-1.css">
-    <link rel="stylesheet" href="/web/landing/style/styleHeader.css">
+    <link rel="stylesheet" href="/web/landing/style/firstSection.css">
     <title>Corvus</title>
     <link rel="icon" type="image/png" href="../images/crow-45972.png">
 </head>
 <body>
     <header class="header">
         <div class="header__top">
-
+            <img src="../images/crow-45972.svg" alt="" class="header__logo">
             <div class="header__title">
                 <h1>CORVUS</h1>
             </div>
@@ -27,14 +27,12 @@
     <main>
         <section class="section-1">
             <div class="section-1__background">
-                <div class="background__over">
-                    <div class="section-1__button buttonL"></div>
-                    <div class="section-1__button buttonR"></div>
+                <div class="background__buttons">
+                    <div class="section-1__button buttonL" id="buttonL"></div>
+                    <div class="section-1__button buttonR" id="buttonR"></div>
                 </div>
-                <ul>
-                    <li><img src="https://www.wallpapertip.com/wmimgs/4-41454_free-download-wallpapers-hd-space-wallpaper-hd-pc.jpg" alt="" class="back-images"></li>
-                    <li><img src="" alt="" class="back-images"></li>
-                    <li><img src="" alt="" class="back-images"></li>
+                <ul class="image-list" id="list">
+                    
                 </ul>
             </div>
         </section>
@@ -62,6 +60,8 @@
 
 
 
-    <script src="/web/landing/script/script.js"></script>
+    <script src="/web/landing/script/slider.js"></script>
+    <!-- <script src="../script/fade.js"></script> -->
+    <script src="../script/screenInfo.js"></script>
 </body>
 </html>
