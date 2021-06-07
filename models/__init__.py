@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-'''Initialize the \'models\' package'''
+from models.engine.dbstorage import DBStorage
 
-from sqlalchemy.ext.declarative import declarative_base
+storage = DBStorage()
 
-
-Base = declarative_base()
-
-storage = DataBase()
+storage.reload()

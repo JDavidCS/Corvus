@@ -1,7 +1,13 @@
-#!/usr/bin/python3 '''Employee Class Definition''' from sqlalchemy import Column, String
+#!/usr/bin/python3 
+
+'''Employee Class Definition'''
+
+from models.basemodel import BaseModel, Base
+from sqlalchemy import Column, String, Integer, ForeignKey
+from sqlalchemy.orm import relationship
 
 
-class Employee(Base):
+class Employee(BaseModel, Base):
     '''
 Employee class.
 
@@ -9,12 +15,20 @@ Employee class.
         Atributes:
             id - emloyee identification
             names - emloyee names
-            forename -emloyee forenames
+            forename - emloyee forenames
             job - emloyee job
             worked_hours - hours in all the month
+            bonus - payment considerations
 
         Methods:
             health - calcule the health payment
             pension - calculate the pension payment
 '''
-    pass
+
+    __tablename__ = 'employes'
+    id = Column(Integer, primary_key=True)
+    names = Column(String(80), nullable=False)
+    forenames = Column(String(80), nullable=False)
+    position = Column(Integer, ForeignKey('positions.id'))
+    worked_hours = Column(Integer, default=0)
+    bonus = relationship('Bonus', back_populates='employee', uselist=False)
