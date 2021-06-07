@@ -17,15 +17,22 @@ let interval = 0;
 const buttonL = document.getElementById('buttonL');
 const buttonR = document.getElementById('buttonR');
 
+
 if(window.XMLHttpRequest) xhr = new XMLHttpRequest();
 else  xhr = new ActiveXObject("Microsoft.XMLHTTP");
 
+
+
 xhr.open('GET', '../images/images.json');
 
-const datos = xhr.addEventListener('load', (data)=>{
+
+xhr.addEventListener('load', (data)=>{
     JSONData = JSON.parse(data.target.response);
     console.log(JSONData);
     displayImages(JSONData);
+    const s = document.createElement('script');
+    s.src = "../script/screenInfo.js"
+    document.body.insertAdjacentElement('beforeend', s);
     interactive();
 });
 
@@ -34,9 +41,9 @@ xhr.send();
 
 function interactive(){
 
-    // function startInterval() { interval= setInterval(counter, 5000);}
+    function startInterval() { interval= setInterval(counter, 5000);}
 
-    // startInterval();
+    startInterval();
 
     /* ---------------------buttons---------------------------- */
 
@@ -46,7 +53,7 @@ function interactive(){
         // console.log('from buttom')
         cont--;
         transition();
-        // startInterval();
+        startInterval();
     })
 
     buttonR.addEventListener('click', ()=>{
@@ -54,7 +61,7 @@ function interactive(){
         // console.log('from buttom')
         cont++;
         transition();
-        // startInterval();
+        startInterval();
     })
 
 
@@ -77,16 +84,8 @@ function interactive(){
 
 
 
-
-
-
-
-
 function displayImages(x){
     const frag = document.createDocumentFragment();
-    const width = Object.keys(x).length;
-
-    slider.setAttribute("style", `width: ${width}00%`);
 
     for(const images of x){
         const itemLI = document.createElement('LI');
@@ -95,10 +94,15 @@ function displayImages(x){
         picture.setAttribute('src', `${images.imageLocation}`);
         picture.setAttribute('class', `back-images image-${images.id}`);
 
+        itemLI.setAttribute('class', 'li')
         itemLI.appendChild(picture);
         frag.appendChild(itemLI);
     }
     slider.appendChild(frag);
+
+    const width = slider.children.length;
+
+    slider.setAttribute("style", `width: ${width}00%`);
 }
 
 
