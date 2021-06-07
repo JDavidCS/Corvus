@@ -19,10 +19,6 @@ Employee class.
             job - emloyee job
             worked_hours - hours in all the month
             bonus - payment considerations
-
-        Methods:
-            health - calcule the health payment
-            pension - calculate the pension payment
 '''
 
     __tablename__ = 'employes'
