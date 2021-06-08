@@ -7,12 +7,16 @@ import models
 from models.basemodel import BaseModel, Base
 from models.bonus import Bonus
 from models.employee import Employee
-from models.position import Position
+from models.item import Item
+from models.company import Company
+from models.admin import Admin
 
 
 classes = {'bonus': Bonus,
+           'item': Item,
            'employee': Employee,
-           'position': Position
+           'company': Company,
+           'admin': Admin
            }
 
 time = '%Y-%m-%d'
@@ -93,7 +97,11 @@ class CORVUSCommand(cmd.Cmd):
                 if len(args) > 2:
                     matches = models.storage.all(classes[args[0]])
                     for match in matches.values():
-                        if match.id == int(args[1]):
+                        if type(match.id) is int:
+                            id = int(args[1])
+                        else:
+                            id = args[1]
+                        if match.id == id:
                             attr = args[2].split('=')
                             if attr[0] in ['id']:
                                 value = int(attr[1])

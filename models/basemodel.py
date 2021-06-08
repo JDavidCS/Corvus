@@ -36,9 +36,11 @@ class BaseModel:
         ret = self.__dict__.copy()
         if '_sa_instance_state' in ret:
             del ret['_sa_instance_state']
-        if "created_at" in ret:
-            ret["created_at"] = ret["created_at"].strftime(time)
-        if "updated_at" in ret:
-            ret["updated_at"] = ret["updated_at"].strftime(time)
+        if 'created_at' in ret:
+            ret['created_at'] = ret['created_at'].strftime(time)
+        if 'updated_at' in ret:
+            ret['updated_at'] = ret['updated_at'].strftime(time)
+        if 'password' in ret:
+            del ret['password']
 
         return ret

@@ -6,13 +6,16 @@ import models
 from models.basemodel import BaseModel, Base
 from models.bonus import Bonus
 from models.employee import Employee
-from models.position import Position
+from models.company import Company
+from models.admin import Admin
+from models.item import Item
 from os import getenv
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
 
-classes = {'bonus': Bonus, 'employee': Employee, 'position': Position}
+classes = {'bonus': Bonus, 'employee': Employee, 'item': Item,
+           'company': Company, 'admin': Admin}
 
 
 class DBStorage:
