@@ -52,7 +52,7 @@ class DBStorage:
             if cls is None or cls == cl:
                 objs = self.__session.query(cl).all()
                 for obj in objs:
-                    ret[obj.__class__.__name__] = obj
+                    ret[obj.id] = obj
         return ret
 
 

@@ -1,7 +1,4 @@
-
-
 /* ----------------------------------seccion 2------------------------------------ */
-
 
 .section-2{
     display: flex;
@@ -75,7 +72,6 @@
     display: flex;
 }
 
-
 .text-columnL{
     display: flex;
     flex-direction: column;
@@ -121,5 +117,3 @@ footer{
     width: 100%;
     background: linear-gradient(to top, #103, #305)
 }
-
-

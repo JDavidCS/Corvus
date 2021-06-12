@@ -34,13 +34,14 @@ class BaseModel:
 
     def to_dict(self):
         ret = self.__dict__.copy()
+        if 'company' in ret:
+            del ret['company']
         if '_sa_instance_state' in ret:
             del ret['_sa_instance_state']
         if 'created_at' in ret:
             ret['created_at'] = ret['created_at'].strftime(time)
         if 'updated_at' in ret:
             ret['updated_at'] = ret['updated_at'].strftime(time)
-        if 'password' in ret:
-            del ret['password']
-
+        if 'password_hash' in ret:
+            del ret['password_hash']
         return ret

@@ -24,5 +24,5 @@ Bonus class.
     type = Column(String(80), nullable=False)
     description = Column(String(250))
     value = Column(Float, nullable=False)
-    employee_id = Column(Integer, ForeignKey('employes.id'))
+    employee_id = Column(ForeignKey('employes.id'))
     employee = relationship('Employee', back_populates='bonus')

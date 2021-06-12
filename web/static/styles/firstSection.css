@@ -107,8 +107,6 @@ body{
         position: absolute;
     }
 
-
-
     .aling-info{
         padding-top: 60px;
         top: 0;
@@ -159,7 +157,6 @@ body{
         background-color: #fff;
     } 
 
-
     .section-1__button{
         position: absolute;
         width: 45px;
@@ -208,8 +205,6 @@ body{
         transition-timing-function: cubic-bezier(.38,.59,.38,.98);
         height: 100%;
     }
-
-        
     
     .image-list .li{
         position: relative;
@@ -229,10 +224,3 @@ body{
         width: 100%;
         object-fit: cover;
     }
-
-
-
-
-
-
-

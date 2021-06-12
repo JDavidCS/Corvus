@@ -31,14 +31,6 @@ function interactive(){
 
     startInterval();
 
-
-
-
-
-
-
-
-
     function counter(){
         // console.log('from timer')
         cont--;
@@ -57,10 +49,6 @@ function interactive(){
         console.log(slider.children[cont].style.opacity)
     }
 }
-
-
-
-
 
 function displayImages(x){
     const frag = document.createDocumentFragment();

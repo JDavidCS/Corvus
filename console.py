@@ -69,8 +69,8 @@ class CORVUSCommand(cmd.Cmd):
         else:
             print("** class doesn't exist **")
             return False
-        print(instance.id)
         instance.save()
+        print(instance.id)
 
     def do_all(self, arg):
         args = shlex.split(arg)

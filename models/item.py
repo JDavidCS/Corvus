@@ -16,3 +16,4 @@ class Item(BaseModel, Base):
     unitary_value = Column(Float, nullable=False)
     finished = Column(Float, default=0)
     employee_id = Column(ForeignKey('employes.id'))
+    employee = relationship('Employee', back_populates='item')
