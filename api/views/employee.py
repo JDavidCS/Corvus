@@ -18,7 +18,7 @@ def get_employees():
     for employee in g.user.company.employees:
         ret[employee.id] = employee.to_dict()
         ret[employee.id]['items_count'] = 0
-        ret[employee.id]['items_bonus'] = 0
+        ret[employee.id]['bonus_count'] = 0
         if employee.item:
             ret[employee.id]['items'] = [item.to_dict()
                                          for item in employee.item]    
