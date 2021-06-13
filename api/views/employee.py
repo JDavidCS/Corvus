@@ -69,6 +69,7 @@ def get_employee(employee_id):
 def create_employee():
     if not request.get_json():
         abort(400, description="Not a JSON")
+    data = request.get_json()
     dni = request.json.get('dni')
     names = request.json.get('names')
     forenames = request.json.get('forenames')
