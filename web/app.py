@@ -18,6 +18,11 @@ def signup():
     return render_template('signup.html')
 
 
+@app.route('/app')
+def application():
+    return render_template('app.html')
+
+
 @app.errorhandler(404)
 def not_found(error):
     return jsonify({'error': 'Not Found'}), 404
