@@ -28,7 +28,7 @@ def application():
 
 @app.errorhandler(404)
 def not_found(error):
-    return jsonify({'error': 'Not Found'}), 404
+    return render_template('error.html')
 
 
 if __name__ == '__main__':
