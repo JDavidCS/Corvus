@@ -20,17 +20,17 @@
       </nav>
     </header>
     <div class="container">
-      <div>
+      <!-- <div> -->
         <form class="form" id="signup">
-          <h1>Inicio</h1>
-          <p>Nombre de tu Empresa: <input type="text" name="company" size="20" required></p>
-          <p>Nombre del Usuario: <input type="text" name="username" size="20" required></p>
-          <p>Contraseña: <input type="password" name="password" size="20" required></p>
+          <h1>Crear Cuenta</h1>
+          <input type="text" name="company" size="20" placeholder=" Nombre de tu Empresa" class="form-text"   required>
+          <input type="text" name="username" size="20" placeholder=" Nombre del Usuario" class="form-text"  required>
+          <input type="password" name="password" size="20" placeholder=" Contraseña" class="form-text" required>
           <p>
             <input type="submit" value="Continuar">
           </p>
         </form>
-      </div>
+      <!-- </div> -->
     </div>
     <script src="{{ url_for('static', filename='scripts/s_form.js') }}"></script>
   </body>

@@ -4,11 +4,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fafafa;
+  background-color: #efefef;
 }
 
 .form {
-  padding: 40px;
-  border: #306 3px solid;
-  border-radius: 30px;
+  display: flex;
+  font-family: 'Roboto';
+  flex-direction: column;
+  height: 400px;
+  justify-content: space-around;
+  width: 350px;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 3px 3px 10px #888;
+}
+
+
+.form-text{
+  width: 215px;
+  height: 34px;
+  border: 1px solid #aaa;
+}
+
+.form-text::placeholder{
+  margin-left: 5px;
 }
