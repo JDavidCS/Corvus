@@ -16,11 +16,13 @@ function tokenRequest() {
     if (response.ok) {
       return response.json()
     } else {
-      console.log(response)
+      location.replace('/login')
     }
   }).then(data => {
     sessionStorage.setItem('token', data.token)
   })
 }
+
+tokenRequest()
 
 setInterval(tokenRequest, 800000)

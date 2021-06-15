@@ -15,14 +15,14 @@
       </div>
       <nav class="header__nav">
         <ul>
-          <li><a href="#" class="log-in">log in</a></li>
+          <li><a href="/login" class="log-in">log in</a></li>
         </ul>
       </nav>
     </header>
     <div class="container">
       <div>
         <form class="form" id="signup">
-          <h1>Registro</h1>
+          <h1>Inicio</h1>
           <p>Nombre de tu Empresa: <input type="text" name="company" size="20" required></p>
           <p>Nombre del Usuario: <input type="text" name="username" size="20" required></p>
           <p>Contraseña: <input type="password" name="password" size="20" required></p>
@@ -32,6 +32,6 @@
         </form>
       </div>
     </div>
-    <script src="{{ url_for('static', filename='scripts/forms.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/s_form.js') }}"></script>
   </body>
 </html>
