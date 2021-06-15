@@ -17,6 +17,9 @@ def landing():
 def signup():
     return render_template('signup.html')
 
+@app.login('/login')
+def login():
+    return render_template('login.html')
 
 @app.route('/app')
 def application():

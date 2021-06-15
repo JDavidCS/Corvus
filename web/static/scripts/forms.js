@@ -7,10 +7,10 @@ function makeGetRequest(e, form) {
   let headers = new Headers()
   headers.append('Content-Type', 'application/json')
   const req = new Request('http://127.0.0.1:5000/api/signup', {
-                                                         method: 'POST',
-                                                         headers: headers,
-                                                         body: JSON.stringify(dict)
-                                                         })
+    method: 'POST',
+    headers: headers,
+    body: JSON.stringify(dict)
+  })
   fetch(req).then(response => {
     if (response.status === 201){
       return response.json()
@@ -19,7 +19,7 @@ function makeGetRequest(e, form) {
     }
   }).then(data => {
     if (data != null) {
-      let token = data.auth_token
+      sessionStorage.setItem('token', data.auth_token)
       location.replace('/app')
     }
   })
