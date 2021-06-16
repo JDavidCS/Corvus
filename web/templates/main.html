@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/app.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corvus</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <h1>CORVUS/<span class="logo__section">Staff</span></h1>
+        </div>
+        <nav>
+            <div class="search">
+                <img src="{{ url_for('static', filename='images/search_black_24dp.svg') }}" alt="">
+                <input type="text" placeholder="Search">
+            </div>
+        </nav>
+        <div class="edit">
+            <img src="{{ url_for('static', filename='images/drive_file_rename_outline_white_18dp.svg')}}" alt="">
+        </div>
+    </header>
+    <main>
+      <div style="width: 400px; height: 400px;">
+        <h3>Pagos</h3>
+        <canvas id="payroll" width="400" height="400"></canvas>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='scripts/application.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='scripts/chart.js') }}"></script>
+</body>
+</html>

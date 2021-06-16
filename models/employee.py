@@ -31,14 +31,14 @@ Employee class.
     item = relationship('Item', back_populates='employee')
     risk = Column(String(1), default=1)
     arl_payment = Column(Boolean, default=False)
-    base_salary = Column(Float, default=877803)
+    base_salary = Column(Float, default=908526)
     worked_hours = Column(Integer, default=0)
     month_payment = Column(Boolean, default=False)
     bonus = relationship('Bonus', back_populates='employee')
 
     def arl(self):
         if self.c_type == 'Termino Indefinido':
-            risks = {'1': 0.522, '2': 1.044, '3': 2.436, '4': 4.35, '5': 6.96}
+            risks = {'1': 0.00522, '2': 0.01044, '3': 0.02436, '4': 0.0435, '5': 0.0696}
             return risks[self.risk] * self.base_salary
         return 0
 
@@ -58,9 +58,17 @@ Employee class.
         return 0
 
     def salary(self):
+        salary = 0
         if self.c_type == 'Obra Labor':
-            salary = 0
+            self.base_salary = 0
             for item in self.item:
                 salary = item.unitary_value * item.finished
-            return salary
-        return self.base_salary
+        elif self.c_type == 'Termino Indefinido':
+            for bonus in self.bonus:
+                salary += bonus.value
+        return self.base_salary + salary
+
+    def sub_trans(self):
+        if self.base_salary < 908.526 * 2:
+            return 106454
+        return 0

@@ -6,24 +6,28 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 
-cors = CORS(app, resources={r'/api/*':  {'origins': '*'}})
+cors = CORS(app, resources={r'/*':  {'origins': '*'}})
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def landing():
     return render_template('index.html')
 
-@app.route('/signup')
+@app.route('/signup', strict_slashes=False)
 def signup():
     return render_template('signup.html')
 
-@app.route('/login')
+@app.route('/login', strict_slashes=False)
 def login():
     return render_template('login.html')
 
-@app.route('/app')
+@app.route('/app/employees', strict_slashes=False)
 def application():
     return render_template('app.html')
+
+@app.route('/app', strict_slashes=False)
+def main_app():
+    return render_template('main.html')
 
 
 @app.errorhandler(404)
