@@ -29,12 +29,14 @@ Employee class.
     position = Column(String(80), nullable=False)
     c_type = Column(String(80), nullable=False)
     item = relationship('Item', back_populates='employee')
-    risk = Column(String(1), default=1)
+    risk = Column(String(1), default='1')
     arl_payment = Column(Boolean, default=False)
     base_salary = Column(Float, default=908526)
     worked_hours = Column(Integer, default=0)
     month_payment = Column(Boolean, default=False)
+    eps = Column(String(60), nullable=False)
     bonus = relationship('Bonus', back_populates='employee')
+    no_acount = Column(String(120), nullable=False)
 
     def arl(self):
         if self.c_type == 'Termino Indefinido':
@@ -66,9 +68,10 @@ Employee class.
         elif self.c_type == 'Termino Indefinido':
             for bonus in self.bonus:
                 salary += bonus.value
+            return (self.base_salary + salary) * 0.08
         return self.base_salary + salary
 
     def sub_trans(self):
-        if self.base_salary < 908.526 * 2:
+        if self.c_type == 'Termino Indefinido' and self.base_salary < 908526 * 2:
             return 106454
         return 0

@@ -30,6 +30,7 @@ def get_employees():
         ret[employee.id]['arl'] = employee.arl()
         ret[employee.id]['health'] = employee.health()
         ret[employee.id]['pension'] = employee.pension()
+        ret[employee.id]['sub_trans'] = employee.sub_trans()
         ret[employee.id]['parafiscales'] = employee.para_f()
         ret[employee.id]['salary'] = employee.salary()
     return jsonify(ret)
@@ -58,6 +59,7 @@ def get_employee(employee_id):
             ret[employee.id]['health'] = employee.health()
             ret[employee.id]['pension'] = employee.pension()
             ret[employee.id]['parafiscales'] = employee.para_f()
+            ret[employee.id]['sub_trans'] = employee.sub_trans()
             ret[employee.id]['salary'] = employee.salary()
         return jsonify(ret)
     abort(404)
@@ -70,29 +72,26 @@ def create_employee():
     if not request.get_json():
         abort(400, description="Not a JSON")
     data = request.get_json()
-    dni = request.json.get('dni')
+    dni = request.json.get('id')
     names = request.json.get('names')
     forenames = request.json.get('forenames')
     position = request.json.get('position')
-    c_type = request.json.get('contract_type')
-    risk = request.json.get('risk')
-    base_salary = request.json.get('base_salary')
-    if not names or not dni:
+    eps = request.json.get('eps')
+    c_type = request.json.get('c_type')
+    no_acount = request.json.get('no_acount')
+    if not names or not dni or not no_acount:
         abort(400)
-    elif not forenames:
+    elif not forenames or not eps or not position:
         abort(400)
     elif c_type not in ['Termino Indefinido',
                         'Obra Labor', 'Prestacion de Servicios']:
         abort(400)
 
-    if c_type == 'Termino Indefinido':
-        arl = True
-    else:
-        arl = False
+    for key in data.keys():
+        if key == 'company':
+            del data['company']
 
-    new = Employee(id=dni, names=names, forenames=forenames, position=position,
-                   c_type=c_type, risk=risk, base_salary=base_salary,
-                   company=g.user.company.id, arl_payment=arl)
+    new = Employee(**data, company=g.user.company.id)
     new.save()
     response = '{} {} is a new {} at {}!'.format(new.names, new.forenames,
                                                  new.position,
