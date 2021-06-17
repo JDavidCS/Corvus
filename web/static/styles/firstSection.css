@@ -37,6 +37,10 @@ body{
         left: 5px;
     }
     
+    .header__top img{
+        height: 100%;
+    }
+
     .header__title h1{
         font-family: 'Roboto-medium';
         margin: 0 10px;

@@ -13,13 +13,13 @@ function getData() {
     headers: headers,
     mode: 'cors'
   })
-  fetch(req).then(response => {
-    if (response.ok) {
-      return response.json()
-    } else {
-      return null
-    }
-  }).then(data => {
+  fetch(req)
+  .then(response => {
+    console.log(response)
+    return response.ok ? response.json() : Promise.reject(response);
+  })
+  .then(data => {
+    console.log(1)
     if (data) {
       let payment = 0
       let arl = 0
@@ -128,6 +128,10 @@ function getData() {
         },
       });
     }
+  })
+  .catch(err =>{
+    console.log(err)
+    console.error(`Error ${err.status} ${err.statusText || 'ocurrio un error'}`)
   })
 }
 
