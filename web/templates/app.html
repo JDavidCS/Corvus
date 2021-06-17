@@ -1,74 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/app.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corvus</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <h1>CORVUS/<span class="logo__section">Staff</span></h1>
+      <div class="logo">
+        <h1>CORVUS/<span class="logo__section">Staff</span></h1>
+      </div>
+      <nav>
+        <div class="search">
+          <img src="{{ url_for('static', filename='images/search_black_24dp.svg') }}" alt="">
+          <input type="text" placeholder="Search">
         </div>
-        <nav>
-            <div class="search">
-                <img src="{{ url_for('static', filename='images/search_black_24dp.svg') }}" alt="">
-                <input type="text" placeholder="Search">
-            </div>
-        </nav>
-        <div class="edit">
-            <img src="{{ url_for('static', filename='images/drive_file_rename_outline_white_18dp.svg')}}" alt="">
-        </div>
+      </nav>
+      <div class="edit">
+        <img src="{{ url_for('static', filename='images/drive_file_rename_outline_white_18dp.svg')}}" alt="">
+      </div>
     </header>
     <main>
-        <section>
-            <div class="filter">
-                <form action="" class="filter__form">
-                    <input type="radio" name="Classification" id="All" checked>
-                    <label for="All" class="all type">
-                        <h2>All</h2>
-                    </label>
-                    
-                    <input type="radio" name="Classification" id="Type-A">
-                    <label for="Type-A" class="typeA type">
-                        <h2>Type A</h2>
-                    </label>
+      <section>
+        <div class="filter">
+          <form action="" class="filter__form">
+            <input type="radio" name="Classification" id="All" checked>
+            <label for="All" class="all type">
+              <h2>All</h2>
+            </label>
 
-                    <input type="radio" name="Classification" id="Type-B">
-                    <label for="Type-B" class="typeB type">
-                        <h2>Type B</h2>
-                    </label>
-                </form>
+            <input type="radio" name="Classification" id="Type-A">
+            <label for="Type-A" class="typeA type">
+              <h2>Type A</h2>
+            </label>
 
-            </div>
-            <div class="display-info">
-                <table class="table" id="table">
-                    <tr class="table__tr">
-                        <td id="id" class="table__td tr__id">2394823529</td>
-                        <td id="forenames" class="table__td column">Correa</td>
-                        <td id="names" class="table__td column ">jesus david</td>
-                        <td id="position" class="table__td less">oficina</td>
-                        <td id="c_type" class="table__td less">prestacion de servicios</td>
-                        <td id="salary" class="table__td table__salary column">$877803</td>
-                    </tr>
-                    <tr class="table__tr">
-                        <td id="id" class="table__td tr__id ">id</td>
-                        <td id="forenames" class="table__td column">forename</td>
-                        <td id="names" class="table__td column">name</td>
-                        <td id="position" class="table__td less">position</td>
-                        <td id="c_type" class="table__td less">c_type</td>
-                        <td id="salary" class="table__td table__salary column">salary</td>
-                    </tr>
-                </table>
-            </div>
-        </section>
+            <input type="radio" name="Classification" id="Type-B">
+            <label for="Type-B" class="typeB type">
+              <h2>Type B</h2>
+            </label>
+          </form>
+        </div>
+        <div class="display-info">
+          <h1>Contrato por Termino Indefinido</h1>
+          <table class="table" id="table_ti"></table>
+          <h1>Contrato por Prestación de servicios</h1>
+          <table class="table" id="table_ps"></table>
+          <h1>Contrato por Obra Labor</h1>
+          <table class="table" id="table_ol"></table>
+        </div>
+      </section>
     </main>
     <aside>
-
     </aside>
     <script src="{{ url_for('static', filename='scripts/application.js') }}"></script>
     <script src="{{ url_for('static', filename='scripts/employees.js') }}"></script>
-</body>
+  </body>
 </html>

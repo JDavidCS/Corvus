@@ -33,6 +33,9 @@ def get_employees():
         ret[employee.id]['sub_trans'] = employee.sub_trans()
         ret[employee.id]['parafiscales'] = employee.para_f()
         ret[employee.id]['salary'] = employee.salary()
+        ret[employee.id]['vacations'] = employee.vacations()
+        ret[employee.id]['cesantias'] = employee.cesantias()
+        ret[employee.id]['in_cesantias'] = employee.in_cesantias()
     return jsonify(ret)
 
 
@@ -61,6 +64,9 @@ def get_employee(employee_id):
             ret[employee.id]['parafiscales'] = employee.para_f()
             ret[employee.id]['sub_trans'] = employee.sub_trans()
             ret[employee.id]['salary'] = employee.salary()
+            ret[employee.id]['vacations'] = employee.vacations()
+            ret[employee.id]['cesantias'] = employee.cesantias()
+            ret[employee.id]['in_cesantias'] = employee.in_cesantias()
         return jsonify(ret)
     abort(404)
 
@@ -86,6 +92,8 @@ def create_employee():
     elif c_type not in ['Termino Indefinido',
                         'Obra Labor', 'Prestacion de Servicios']:
         abort(400)
+    if c_type in ['Obra Labor', 'Prestacion de Servicios']:
+        data['base_salary'] = 0
 
     for key in data.keys():
         if key == 'company':

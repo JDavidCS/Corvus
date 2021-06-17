@@ -17,15 +17,38 @@ function listEmployees() {
   }).then(data => {
     if (data) {
       for (let i in data){
-        document.getElementById('table').innerHTML +=
+        if (data[i]['c_type'] === 'Termino Indefinido') {
+        document.getElementById('table_ti').innerHTML +=
           `<tr class="table__tr">
               <td id="id" class="table__td tr__id">${data[i]['id']}</td>
               <td id="forenames" class="table__td column">${data[i]['forenames']}</td>
               <td id="names" class="table__td column ">${data[i]['names']}</td>
               <td id="position" class="table__td less">${data[i]['position']}</td>
-              <td id="c_type" class="table__td less">${data[i]['c_type']}</td>
+              <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
               <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
            </tr>`
+        } else if (data[i]['c_type'] === 'Prestacion de Servicios') {
+      document.getElementById('table_ps').innerHTML +=
+          `<tr class="table__tr">
+              <td id="id" class="table__td tr__id">${data[i]['id']}</td>
+              <td id="forenames" class="table__td column">${data[i]['forenames']}</td>
+              <td id="names" class="table__td column ">${data[i]['names']}</td>
+              <td id="position" class="table__td less">${data[i]['position']}</td>
+              <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
+              <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
+           </tr>`
+        } else {
+      document.getElementById('table_ol').innerHTML +=
+          `<tr class="table__tr">
+              <td id="id" class="table__td tr__id">${data[i]['id']}</td>
+              <td id="forenames" class="table__td column">${data[i]['forenames']}</td>
+              <td id="names" class="table__td column ">${data[i]['names']}</td>
+              <td id="position" class="table__td less">${data[i]['position']}</td>
+              <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
+              <td id="items_count" class="table__td less">${data[i]['items_count']}</td>
+              <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
+           </tr>`
+        }
       }
     }
   })
