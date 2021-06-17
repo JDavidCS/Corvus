@@ -67,6 +67,7 @@ body{
     }
 
     .header__nav a{
+        user-select: none;
         font-size: 20px;
         text-decoration: none;
     }

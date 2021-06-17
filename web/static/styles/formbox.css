@@ -17,8 +17,14 @@
   align-items: center;
   background-color: #fff;
   box-shadow: 3px 3px 10px #888;
+  font-family: 'Roboto-light';
 }
 
+.form h1{
+  margin: 0;
+  font-size: 38px;
+  font-family: 'Roboto-medium';
+}
 
 .form-text{
   width: 215px;
@@ -26,6 +32,21 @@
   border: 1px solid #aaa;
 }
 
-.form-text::placeholder{
-  margin-left: 5px;
+
+.login__data{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login__data input{
+  margin: 15px;
+}
+
+.form input[type='submit']{
+  width: 120px;
+  height: 40px;
+  color: #fff;
+  background-color: #4b0081;
+  border: none;
 }
