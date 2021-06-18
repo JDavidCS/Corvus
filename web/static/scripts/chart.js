@@ -56,18 +56,18 @@ function getData() {
           datasets: [{
             data: [payment, arl, health, pension, p_f],
             backgroundColor: [
-              'rgb(86, 45, 120)',
-              'rgb(0, 125, 152)',
-              'rgba(255, 206, 86)',
-              'rgb(11, 17, 43)',
-              'rgba(153, 102, 255)',
+              'rgb(242, 65, 80)',
+              'rgb(166, 93, 154)',
+              'rgb(66, 44, 89)',
+              'rgb(242, 229, 41)',
+              'rgb(242, 121, 121)',
             ],
             borderColor: [
-              'rgb(11, 17, 43)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
+              'rgb(242, 65, 80)',
+              'rgb(166, 93, 154)',
+              'rgb(66, 44, 89)',
+              'rgb(242, 229, 41)',
+              'rgb(242, 121, 121)',
             ],
             borderWidth: 1
           }]
@@ -79,7 +79,6 @@ function getData() {
         count.push(epss[i])
         employees += 1
       }
-      console.log(eps_list)
       var chart = new Chart(ctx2, {
         type: 'bar',
         data: {
@@ -87,18 +86,20 @@ function getData() {
           datasets: [{
             data: count,
             backgroundColor: [
-              'rgba(255, 99, 132)',
-              'rgba(54, 162, 235)',
-              'rgba(255, 206, 86)',
-              'rgba(75, 192, 192)',
-              'rgba(153, 102, 255)',
+              'rgb(60, 0, 89)',
+              'rgb(153, 0, 230)',
+              'rgb(102, 0, 153)',
+              'rgb(111, 0, 166)',
+              'rgb(85, 0, 128)',
+              'rgb(57, 48, 115)',
             ],
             borderColor: [
-              'rgba(255, 99, 132)',
-              'rgba(54, 162, 235)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
+              'rgb(60, 0, 89)',
+              'rgb(153, 0, 230)',
+              'rgb(102, 0, 153)',
+              'rgb(111, 0, 166)',
+              'rgb(85, 0, 128)',
+              'rgb(57, 48, 115)',
             ],
           }]
         }
@@ -110,18 +111,18 @@ function getData() {
           datasets: [{
             data: [(cesantias + in_cesantias), arl, health, pension, p_f],
             backgroundColor: [
-              'rgba(255, 99, 132)',
-              'rgba(54, 162, 235)',
-              'rgba(255, 206, 86)',
-              'rgba(75, 192, 192)',
-              'rgba(153, 102, 255)',
+              'rgb(242, 65, 80)',
+              'rgb(166, 93, 154)',
+              'rgb(66, 44, 89)',
+              'rgb(242, 229, 41)',
+              'rgb(242, 121, 121)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)',
+              'rgb(242, 65, 80)',
+              'rgb(166, 93, 154)',
+              'rgb(66, 44, 89)',
+              'rgb(242, 229, 41)',
+              'rgb(242, 121, 121)',
             ],
             borderWidth: 1
           }]
@@ -129,7 +130,7 @@ function getData() {
       });
     }
   })
-  .catch(err =>{
+  .catch(err => {
     console.log(err)
     console.error(`Error ${err.status} ${err.statusText || 'ocurrio un error'}`)
   })

@@ -92,7 +92,7 @@ def create_employee():
     elif c_type not in ['Termino Indefinido',
                         'Obra Labor', 'Prestacion de Servicios']:
         abort(400)
-    if c_type in ['Obra Labor', 'Prestacion de Servicios']:
+    if c_type == 'Obra Labor':
         data['base_salary'] = 0
 
     for key in data.keys():

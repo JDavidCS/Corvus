@@ -25,7 +25,7 @@ function listEmployees() {
               <td id="names" class="table__td column ">${data[i]['names']}</td>
               <td id="position" class="table__td less">${data[i]['position']}</td>
               <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
-              <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
+              <td id="salary" class="table__td table__salary column">$ ${Math.round(data[i]['salary'])}</td>
            </tr>`
         } else if (data[i]['c_type'] === 'Prestacion de Servicios') {
       document.getElementById('table_ps').innerHTML +=
@@ -35,7 +35,7 @@ function listEmployees() {
               <td id="names" class="table__td column ">${data[i]['names']}</td>
               <td id="position" class="table__td less">${data[i]['position']}</td>
               <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
-              <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
+              <td id="salary" class="table__td table__salary column">$ ${Math.round(data[i]['salary'])}</td>
            </tr>`
         } else {
       document.getElementById('table_ol').innerHTML +=
@@ -46,7 +46,7 @@ function listEmployees() {
               <td id="position" class="table__td less">${data[i]['position']}</td>
               <td id="no_acount" class="table__td less">${data[i]['no_acount']}</td>
               <td id="items_count" class="table__td less">${data[i]['items_count']}</td>
-              <td id="salary" class="table__td table__salary column">$${data[i]['salary']}</td>
+              <td id="salary" class="table__td table__salary column">$ ${Math.round(data[i]['salary'])}</td>
            </tr>`
         }
       }

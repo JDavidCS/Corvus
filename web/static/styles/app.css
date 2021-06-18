@@ -1,12 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 *{
     font-family: 'Roboto';
     box-sizing: border-box;
     margin: 0;
 }
 
-
+h1 {
+  font-family: 'Roboto';
+  padding: 40px;
+}
 
 body{
     background-color: #eee;
@@ -119,16 +127,21 @@ body input:checked + .float{
 }
 /* ------------------------------- */
 
-section{
-    margin: auto;
-    margin-top: 40px;
+.fake {
+    margin-inline: auto;
+    width: 88vw;
+    overflow: auto;
+}
+
+section {
+    margin-inline: auto;
     width: 88vw;
     height: 80vh;
     overflow: auto;
     min-width: 753px;
 }
 
-.edit{
+.edit {
     position: absolute;
     right: 30px;
     height: 35px;
@@ -138,16 +151,13 @@ section{
     align-items: center;
 }
 
-.edit img{
+.edit img {
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
 
-
-
-
-.filter{
+.filter {
     display: flex;
     height: 60px;
     background-color: #ddd;
@@ -155,15 +165,15 @@ section{
     border-top-right-radius: 20px;
 }
 
-.filter__form{
+.filter__form {
     display: flex;
 }
 
-.filter__form input[type="radio"]{
+.filter__form input[type="radio"] {
     display: none;
 }
 
-.type{
+.type {
     position: relative;
     display: flex;
     height: inherit;
@@ -172,16 +182,16 @@ section{
     cursor: pointer;
     margin-right: 5px;
 }
+
 .filter__form input[type="radio"]:checked + label {
     background-color: #ffffff;
 }
 
-.type:hover{
+.type:hover {
     background-color: #aaa;
 }
 
-
-.all{
+.all {
     border-top-left-radius: 20px;
     position: relative;
     display: flex;
@@ -190,57 +200,51 @@ section{
     align-items: center;
 }
 
-.type h2{
+.type h2 {
     padding-left: 20px;
 }
 
-
-.display-info{
+.display-info {
     height: 70vh;
 }
 
-.table{
+.table {
     position: relative;
     width: 100%;
     border-collapse: collapse;
 }
 
-.table__tr{
+.table__tr {
     display: flex;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 1px 2px #aaa;
 }
-.table__tr:hover{
+.table__tr:hover {
     background-color: #eee;
 }
 
-.table__td{
+.table__td {
     flex-grow: 1;
     flex-basis: 200px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
 }
-.tr__id{
+.tr__id {
     padding-left: 20px;
     flex-basis: 170px;
 }
 
-.less{
+.less {
     font-weight: 100;
     color: #999;
 }
 
-.table__salary{
+.table__salary {
     box-sizing: border-box;
     text-align: center;
     background-color: #ee05;
     width: 170px;
     flex-grow: 0;
 }
-
-
-
-
-

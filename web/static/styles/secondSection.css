@@ -86,6 +86,7 @@
 .about__text h2{
     font-family: 'Roboto-bold';
     font-size: 32px;
+    padding-bottom: 20px;
 }
 .about__text p{
     line-height: 25px;
