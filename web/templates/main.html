@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/app.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corvus</title>
 </head>
@@ -19,21 +20,36 @@
             </div>
         </nav>
         <div class="edit">
-            <img src="{{ url_for('static', filename='images/drive_file_rename_outline_white_18dp.svg')}}" alt="">
+            <img src="{{ url_for('static', filename='images/add_white_18dp.svg')}}" alt="">
         </div>
     </header>
     <main>
-      <div style="width: 400px; height: 400px;">
-        <h3>Pagos</h3>
-        <canvas id="payroll" width="400" height="400"></canvas>
+
+      <div class="pagos">
+        <div class="cont-h3">
+          <h3>Pagos</h3>
+        </div>
+        <div class="cont-cav">
+          <div class="pagos__canvas">
+            <canvas id="payroll" class="cav"></canvas>
+          </div>
+        </div>
       </div>
-      <div style="width: 400px; height: 400px;">
-        <h3>EPS</h3>
-        <canvas id="eps" width="400" height="400"></canvas>
-      </div>
-      <div style="width: 400px; height: 400px;">
-        <h3>EPS</h3>
-        <canvas id="others" width="400" height="400"></canvas>
+      
+      <div class="eps">
+        <h2>EPS</h2>
+        <div class="eps__cav">
+          <div class="cont-cav e-cav">
+            <div class="canvas">
+              <canvas id="eps"></canvas>
+            </div>
+          </div>
+          <div class="cont-cav e-cav">
+            <div class="canvas">
+              <canvas id="others"></canvas>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     </main>

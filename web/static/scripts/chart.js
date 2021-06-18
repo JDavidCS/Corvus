@@ -56,14 +56,14 @@ function getData() {
           datasets: [{
             data: [payment, arl, health, pension, p_f],
             backgroundColor: [
-              'rgba(255, 99, 132)',
-              'rgba(54, 162, 235)',
+              'rgb(86, 45, 120)',
+              'rgb(0, 125, 152)',
               'rgba(255, 206, 86)',
-              'rgba(75, 192, 192)',
+              'rgb(11, 17, 43)',
               'rgba(153, 102, 255)',
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgb(11, 17, 43)',
               'rgba(54, 162, 235, 1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
